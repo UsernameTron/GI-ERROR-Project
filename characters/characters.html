@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>G.I. ERROR: Character Index</title>
+  <style>
+    /* Basic reset */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    /* Page style */
+    body {
+      background-color: #0e0e0e;
+      color: #f4f4f4;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+    h1 {
+      color: #ff6f00;
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+    }
+    /* Grid container */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 30px;
+      justify-items: center;
+      margin: 0 auto;
+      max-width: 1200px; /* adjust as needed */
+    }
+    /* Card container for flip effect */
+    .card {
+      position: relative;
+      width: 300px;    /* increased width */
+      height: 420px;   /* increased height */
+      perspective: 1000px; /* for 3D flip */
+      margin: 0 auto;
+    }
+    .card-inner {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s ease;
+      transform-style: preserve-3d;
+    }
+    /* Flip on hover */
+    .card:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+    /* Front and back faces */
+    .card-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(255, 111, 0, 0.4);
+    }
+    .card-front,
+    .card-back {
+      background-color: #1c1c1c;
+    }
+    .card-back {
+      transform: rotateY(180deg);
+    }
+    /* Images inside each face */
+    .card-face img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain; /* keeps text in view */
+      display: block;
+    }
+    /* Character name under the card (optional) */
+    .card h3 {
+      margin-top: 10px;
+      font-size: 1.1rem;
+      color: #ff6f00;
+    }
+  </style>
+</head>
+<body>
+  <h1>G.I. ERROR: Character Index</h1>
+  <div class="grid">
+    <!-- Admiral Metrics -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-face card-front">
+          <img src="https://raw.githubusercontent.com/UsernameTron/GI-ERROR-Project/main/characters/Admiral%20Metrics.jpeg" alt="Admiral Metrics">
+        </div>
+        <div class="card-face card-back">
+          <img src="https://raw.githubusercontent.com/UsernameTron/GI-ERROR-Project/main/characters/Admiral%20Metrics%20Bio.png" alt="Admiral Metrics Bio">
+        </div>
+      </div>
+      <h3>Admiral Metrics</h3>
+    </div>
+    
+    <!-- Baroness Bandwidth -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-face card-front">
+          <img src="https://raw.githubusercontent.com/UsernameTron/GI-ERROR-Project/main/characters/Baroness%20Bandwidth.jpeg" alt="Baroness Bandwidth">
+        </div>
+        <div class="card-face card-back">
+          <img src="https://raw.githubusercontent.com/UsernameTron/GI-ERROR-Project/main/characters/Baroness%20Bandwidth%20Bio.png" alt="Baroness Bandwidth Bio">
+        </div>
+      </div>
+      <h3>Baroness Bandwidth</h3>
+    </div>
+    
+    <!-- Col HumbleBragg -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-face card-front">
+          <img src="https://raw.githubusercontent.com/UsernameTron/GI-ERROR-Project/main/characters/Col%20HumbleBragg.jpeg" alt="Col HumbleBragg">
+        </div>
+        <div class="card-face card-back">
+          <img src="https://raw.githubusercontent.com/UsernameTron/GI-ERROR-Project/main/characters/Col%20HumbleBragg%20Bio.png" alt="Col HumbleBragg Bio">
+        </div>
+      </div>
+      <h3>Col HumbleBragg</h3>
+    </div>
+    
+    <!-- Commander Churn -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-face card-front">
+          <img src="https://raw.githubusercontent.com/UsernameTron/GI-ERROR-Project/main/characters/Commander%20Churn.jpeg" alt="Commander Churn">
+        </div>
+        <div class="card-face card-back">
+          <img src="https://raw.githubusercontent.com/UsernameTron/GI-ERROR-Project/main/characters/Commander%20Churn%20Bio.png" alt="Commander Churn Bio">
+        </div>
+      </div>
+      <h3>Commander Churn</h3>
+    </div>
+    
+    <!-- Dr Ego -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-face card-front">
+          <img src="https://raw.githubusercontent.com/UsernameTron/GI-ERROR-Project/main/characters/Dr%20Ego.jpeg" alt="Dr Ego">
+        </div>
+        <div class="card-face card-back">
+          <img src="https://raw.githubusercontent.com/UsernameTron/GI-ERROR-Project/main/characters/Dr%20Ego%20Bio.png" alt="Dr Ego Bio">
+        </div>
+      </div>
+      <h3>Dr Ego</h3>
+    </div>
+    
+    <!-- Emporer Engage -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-face card-front">
+          <img src="https://raw.githubusercontent.com/UsernameTron/GI-ERROR-Project/main/characters/Emporer%20Engage.jpeg" alt="Emporer Engage">
+        </div>
+        <div class="card-face card-back">
+          <img src="https://raw.githubusercontent.com/UsernameTron/GI-ERROR-Project/main/characters/Emporer%20Engage%20Bio.png" alt="Emporer Engage Bio">
+        </div>
+      </div>
+      <h3>Emporer Engage</h3>
+    </div>
+    
+    <!-- General Clout -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-face card-front">
+          <img src="https://raw.githubusercontent.com/UsernameTron/GI-ERROR-Project/main/characters/General%20Clout.jpeg" alt="General Clout">
+        </div>
+        <div class="card-face card-back">
+          <img src="https://raw.githubusercontent.com/UsernameTron/GI-ERROR-Project/main/characters/General%20Cloud%20Bio.png" alt="General Cloud Bio">
+        </div>
+      </div>
+      <h3>General Clout</h3>
+    </div>
+    
+    <!-- Lead Magnetron -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-face card-front">
+          <img src="https://raw.githubusercontent.com/UsernameTron/GI-ERROR-Project/main/characters/Lead%20Magnetron.jpeg" alt="Lead Magnetron">
+        </div>
+        <div class="card-face card-back">
+          <img src="https://raw.githubusercontent.com/UsernameTron/GI-ERROR-Project/main/characters/Lead%20Magnetron%20Bio.png" alt="Lead Magnetron Bio">
+        </div>
+      </div>
+      <h3>Lead Magnetron</h3>
+    </div>
+    
+    <!-- Lt Clickbait -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-face card-front">
+          <img src="https://raw.githubusercontent.com/UsernameTron/GI-ERROR-Project/main/characters/LtClickbait.png" alt="Lt Clickbait">
+        </div>
+        <div class="card-face card-back">
+          <img src="https://raw.githubusercontent.com/UsernameTron/GI-ERROR-Project/main/characters/Lt%20Clickbait%20Bio.png" alt="Lt Clickbait Bio">
+        </div>
+      </div>
+      <h3>Lt Clickbait</h3>
+    </div>
+    
+    <!-- Major Cringe -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-face card-front">
+          <img src="https://raw.githubusercontent.com/UsernameTron/GI-ERROR-Project/main/characters/Major%20Cringe.jpeg" alt="Major Cringe">
+        </div>
+        <div class="card-face card-back">
+          <img src="https://raw.githubusercontent.com/UsernameTron/GI-ERROR-Project/main/characters/Major%20Cringe%20Bio.png" alt="Major Cringe Bio">
+        </div>
+      </div>
+      <h3>Major Cringe</h3>
+    </div>
+    
+    <!-- Major Unsubscribe -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-face card-front">
+          <img src="https://raw.githubusercontent.com/UsernameTron/GI-ERROR-Project/main/characters/Major%20Unsubscribe.jpeg" alt="Major Unsubscribe">
+        </div>
+        <div class="card-face card-back">
+          <img src="https://raw.githubusercontent.com/UsernameTron/GI-ERROR-Project/main/characters/Major%20Unsubscribe%20Bio.png" alt="Major Unsubscribe Bio">
+        </div>
+      </div>
+      <h3>Major Unsubscribe</h3>
+    </div>
+    
+    <!-- Private DM Slide -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-face card-front">
+          <img src="https://raw.githubusercontent.com/UsernameTron/GI-ERROR-Project/main/characters/Private%20DM%20Slide.jpeg" alt="Private DM Slide">
+        </div>
+        <div class="card-face card-back">
+          <img src="https://raw.githubusercontent.com/UsernameTron/GI-ERROR-Project/main/characters/Private%20DM%20Slide%20Bio.png" alt="Private DM Slide Bio">
+        </div>
+      </div>
+      <h3>Private DM Slide</h3>
+    </div>
+    
+    <!-- Sgt Flex -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-face card-front">
+          <img src="https://raw.githubusercontent.com/UsernameTron/GI-ERROR-Project/main/characters/Sgt%20Flex.jpeg" alt="Sgt Flex">
+        </div>
+        <div class="card-face card-back">
+          <img src="https://raw.githubusercontent.com/UsernameTron/GI-ERROR-Project/main/characters/Sgt%20Flex%20Bio.png" alt="Sgt Flex Bio">
+        </div>
+      </div>
+      <h3>Sgt Flex</h3>
+    </div>
+  </div>
+</body>
+</html>
