@@ -4,83 +4,44 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>G.I. ERROR - Cinematic Visual Showcase</title>
-  <!-- Improvement: Consider adding meta description and keywords for SEO enhancement -->
+  <!-- Improvement: Add meta description, keywords, and ARIA landmarks for better SEO and accessibility -->
   <style>
-    /* 
-      GLOBAL STYLES 
-      Dark background for cinematic atmosphere; use a sans-serif font for readability.
-    */
+    /* Global Styles: Establish the dark, cinematic aesthetic */
     body {
       margin: 0;
       padding: 0;
-      background-color: #111; /* Dark background for cinematic feel */
+      background-color: #111;
       color: #f0f0f0;
       font-family: Arial, sans-serif;
       line-height: 1.6;
     }
-    /*
-      Improvement: Potentially increase the base font-size for better readability,
-      especially on high-density mobile screens.
-    */
+    /* Improvement: Consider using a larger base font-size for high-density mobile screens */
 
-    /* 
-      GALLERY WRAPPER 
-      We use explicit columns for small, medium, and large screens to ensure a stable layout. 
-    */
+    /* Gallery Container: Centered with a maximum width for desktop and dynamic grid columns */
     .gallery {
       display: grid;
       gap: 20px;
       padding: 20px;
-      /* Single column on extra-small screens */
-      grid-template-columns: 1fr;
+      max-width: 1200px;       /* Restricts gallery width on large screens */
+      margin: 0 auto;          /* Centers the gallery container */
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
-    
-    /* 
-      Responsive Breakpoints:
-      - On medium screens (≥ 600px), show 2 columns.
-      - On large screens (≥ 1024px), show 4 columns.
-      These breakpoints can be adjusted to suit your project's design.
-    */
-    @media (min-width: 600px) {
-      .gallery {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-    @media (min-width: 1024px) {
-      .gallery {
-        grid-template-columns: repeat(4, 1fr);
-      }
-    }
+    /* Improvement: Adjust minmax values if you wish to change card sizing */
 
-    /* 
-      GALLERY ITEM 
-      Each item is a simple box with a shadow and background. 
-      By default, let the image define the height.
-    */
+    /* Gallery Item: Flex container to stack image and caption consistently */
     .gallery-item {
       background-color: #1a1a1a;
       border-radius: 5px;
       overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
       display: flex;
       flex-direction: column;
-      /* 
-        Improvement: If you want uniform card heights, consider a fixed height plus object-fit for images. 
-        e.g. min-height: 400px 
-      */
     }
-    /* 
-      Use lazy loading (loading="lazy") for performance if desired 
-      (not all browsers fully support it yet, but it's worth adding).
-    */
+    /* Improvement: Use a fixed or aspect-ratio container to unify image heights if needed */
 
-    /* 
-      IMAGE STYLING & INTERACTIVITY 
-      Grayscale-to-color hover transition and mild zoom for cinematic flair.
-    */
+    /* Image Styles: Full width with a grayscale-to-color hover effect and subtle zoom */
     .gallery-item img {
       width: 100%;
-      height: auto;
       display: block;
       filter: grayscale(100%);
       transition: filter 0.3s ease, transform 0.3s ease;
@@ -89,16 +50,9 @@
       filter: grayscale(0%);
       transform: scale(1.05);
     }
-    /* 
-      Improvement: If you want a uniform aspect ratio:
-      1) Wrap img in a container with fixed aspect-ratio (16:9 or 4:3).
-      2) Use object-fit: cover or contain as needed.
-    */
+    /* Improvement: Consider object-fit: cover within a fixed-height container to maintain aspect ratios */
 
-    /* 
-      CAPTION AND DETAILS 
-      Place the filename as a heading or paragraph, then details for expansions.
-    */
+    /* Caption and Details: Clear text and collapsible details with appropriate spacing */
     .caption {
       padding: 10px;
       background-color: #222;
@@ -107,18 +61,19 @@
     .caption p {
       margin: 0 0 10px;
       font-size: 0.9em;
-      overflow-wrap: break-word;
     }
     details {
       background: #333;
       border-radius: 3px;
+      margin: 0 auto;
+      width: 90%;
     }
     details summary {
       cursor: pointer;
       padding: 5px;
       font-size: 0.85em;
       outline: none;
-      list-style: none;
+      /* Improvement: Add focus-visible styling for improved keyboard navigation */
     }
     details[open] summary {
       border-bottom: 1px solid #555;
@@ -128,20 +83,14 @@
       font-size: 0.8em;
       color: #ccc;
     }
-    /* 
-      Improvement: Consider focus-visible styling for keyboard navigation on <summary>.
-    */
   </style>
 </head>
 <body>
-  <!-- 
-    Improvement: A header could introduce the project and its satirical/UX critique theme.
-  -->
+  <!-- Main gallery container -->
   <div class="gallery">
-
     <!-- Gallery Item: Action Sequence.png -->
     <div class="gallery-item">
-      <img src="/cinematic/Action Sequence.png" alt="Action Sequence">
+      <img src="cinematic/Action Sequence.png" alt="Action Sequence">
       <div class="caption">
         <p>Action Sequence.png</p>
         <details>
@@ -153,7 +102,7 @@
 
     <!-- Gallery Item: Assaulting DMs.png -->
     <div class="gallery-item">
-      <img src="/cinematic/Assaulting DMs.png" alt="Assaulting DMs">
+      <img src="cinematic/Assaulting DMs.png" alt="Assaulting DMs">
       <div class="caption">
         <p>Assaulting DMs.png</p>
         <details>
@@ -165,7 +114,7 @@
 
     <!-- Gallery Item: Axis Ascends.png -->
     <div class="gallery-item">
-      <img src="/cinematic/Axis Ascends.png" alt="Axis Ascends">
+      <img src="cinematic/Axis Ascends.png" alt="Axis Ascends">
       <div class="caption">
         <p>Axis Ascends.png</p>
         <details>
@@ -177,7 +126,7 @@
 
     <!-- Gallery Item: B2B Battle.png -->
     <div class="gallery-item">
-      <img src="/cinematic/B2B Battle.png" alt="B2B Battle">
+      <img src="cinematic/B2B Battle.png" alt="B2B Battle">
       <div class="caption">
         <p>B2B Battle.png</p>
         <details>
@@ -189,7 +138,7 @@
 
     <!-- Gallery Item: Baroness dbl.PNG -->
     <div class="gallery-item">
-      <img src="/cinematic/Baroness dbl.PNG" alt="Baroness dbl">
+      <img src="cinematic/Baroness dbl.PNG" alt="Baroness dbl">
       <div class="caption">
         <p>Baroness dbl.PNG</p>
         <details>
@@ -201,7 +150,7 @@
 
     <!-- Gallery Item: Battle scene.png -->
     <div class="gallery-item">
-      <img src="/cinematic/Battle scene.png" alt="Battle scene">
+      <img src="cinematic/Battle scene.png" alt="Battle scene">
       <div class="caption">
         <p>Battle scene.png</p>
         <details>
@@ -213,7 +162,7 @@
 
     <!-- Gallery Item: Battlefield.png -->
     <div class="gallery-item">
-      <img src="/cinematic/Battlefield.png" alt="Battlefield">
+      <img src="cinematic/Battlefield.png" alt="Battlefield">
       <div class="caption">
         <p>Battlefield.png</p>
         <details>
@@ -225,7 +174,7 @@
 
     <!-- Gallery Item: Bragg dbl.png -->
     <div class="gallery-item">
-      <img src="/cinematic/Bragg dbl.png" alt="Bragg dbl">
+      <img src="cinematic/Bragg dbl.png" alt="Bragg dbl">
       <div class="caption">
         <p>Bragg dbl.png</p>
         <details>
@@ -237,7 +186,7 @@
 
     <!-- Gallery Item: CX Dbl.png -->
     <div class="gallery-item">
-      <img src="/cinematic/CX Dbl.png" alt="CX Dbl">
+      <img src="cinematic/CX Dbl.png" alt="CX Dbl">
       <div class="caption">
         <p>CX Dbl.png</p>
         <details>
@@ -249,7 +198,7 @@
 
     <!-- Gallery Item: Conversion Collapse 2.png -->
     <div class="gallery-item">
-      <img src="/cinematic/Conversion Collapse 2.png" alt="Conversion Collapse 2">
+      <img src="cinematic/Conversion Collapse 2.png" alt="Conversion Collapse 2">
       <div class="caption">
         <p>Conversion Collapse 2.png</p>
         <details>
@@ -261,7 +210,7 @@
 
     <!-- Gallery Item: Conversion Collapse.png -->
     <div class="gallery-item">
-      <img src="/cinematic/Conversion Collapse.png" alt="Conversion Collapse">
+      <img src="cinematic/Conversion Collapse.png" alt="Conversion Collapse">
       <div class="caption">
         <p>Conversion Collapse.png</p>
         <details>
@@ -273,7 +222,7 @@
 
     <!-- Gallery Item: Cringe Dbl.png -->
     <div class="gallery-item">
-      <img src="/cinematic/Cringe Dbl.png" alt="Cringe Dbl">
+      <img src="cinematic/Cringe Dbl.png" alt="Cringe Dbl">
       <div class="caption">
         <p>Cringe Dbl.png</p>
         <details>
@@ -285,7 +234,7 @@
 
     <!-- Gallery Item: Cringe Force Protocol 2.jpeg -->
     <div class="gallery-item">
-      <img src="/cinematic/Cringe Force Protocol 2.jpeg" alt="Cringe Force Protocol 2">
+      <img src="cinematic/Cringe Force Protocol 2.jpeg" alt="Cringe Force Protocol 2">
       <div class="caption">
         <p>Cringe Force Protocol 2.jpeg</p>
         <details>
@@ -297,7 +246,7 @@
 
     <!-- Gallery Item: Cringe Force Rising 2.jpeg -->
     <div class="gallery-item">
-      <img src="/cinematic/Cringe Force Rising 2.jpeg" alt="Cringe Force Rising 2">
+      <img src="cinematic/Cringe Force Rising 2.jpeg" alt="Cringe Force Rising 2">
       <div class="caption">
         <p>Cringe Force Rising 2.jpeg</p>
         <details>
@@ -309,7 +258,7 @@
 
     <!-- Gallery Item: Cringe Force Rising.jpg -->
     <div class="gallery-item">
-      <img src="/cinematic/Cringe Force Rising.jpg" alt="Cringe Force Rising">
+      <img src="cinematic/Cringe Force Rising.jpg" alt="Cringe Force Rising">
       <div class="caption">
         <p>Cringe Force Rising.jpg</p>
         <details>
@@ -321,7 +270,7 @@
 
     <!-- Gallery Item: Cringe Force Rising.png -->
     <div class="gallery-item">
-      <img src="/cinematic/Cringe Force Rising.png" alt="Cringe Force Rising">
+      <img src="cinematic/Cringe Force Rising.png" alt="Cringe Force Rising">
       <div class="caption">
         <p>Cringe Force Rising.png</p>
         <details>
@@ -333,7 +282,7 @@
 
     <!-- Gallery Item: Crying.png -->
     <div class="gallery-item">
-      <img src="/cinematic/Crying.png" alt="Crying">
+      <img src="cinematic/Crying.png" alt="Crying">
       <div class="caption">
         <p>Crying.png</p>
         <details>
@@ -345,7 +294,7 @@
 
     <!-- Gallery Item: DM Slide dbl.png -->
     <div class="gallery-item">
-      <img src="/cinematic/DM Slide dbl.png" alt="DM Slide dbl">
+      <img src="cinematic/DM Slide dbl.png" alt="DM Slide dbl">
       <div class="caption">
         <p>DM Slide dbl.png</p>
         <details>
@@ -357,7 +306,7 @@
 
     <!-- Gallery Item: Dark Group Photo.png -->
     <div class="gallery-item">
-      <img src="/cinematic/Dark Group Photo.png" alt="Dark Group Photo">
+      <img src="cinematic/Dark Group Photo.png" alt="Dark Group Photo">
       <div class="caption">
         <p>Dark Group Photo.png</p>
         <details>
@@ -369,7 +318,7 @@
 
     <!-- Gallery Item: Empored dbl.png -->
     <div class="gallery-item">
-      <img src="/cinematic/Empored dbl.png" alt="Empored dbl">
+      <img src="cinematic/Empored dbl.png" alt="Empored dbl">
       <div class="caption">
         <p>Empored dbl.png</p>
         <details>
@@ -381,7 +330,7 @@
 
     <!-- Gallery Item: Flex dbl.png -->
     <div class="gallery-item">
-      <img src="/cinematic/Flex dbl.png" alt="Flex dbl">
+      <img src="cinematic/Flex dbl.png" alt="Flex dbl">
       <div class="caption">
         <p>Flex dbl.png</p>
         <details>
@@ -393,7 +342,7 @@
 
     <!-- Gallery Item: GPT In Battle.png -->
     <div class="gallery-item">
-      <img src="/cinematic/GPT In Battle.png" alt="GPT In Battle">
+      <img src="cinematic/GPT In Battle.png" alt="GPT In Battle">
       <div class="caption">
         <p>GPT In Battle.png</p>
         <details>
@@ -405,7 +354,7 @@
 
     <!-- Gallery Item: Group Photo 2.png -->
     <div class="gallery-item">
-      <img src="/cinematic/Group Photo 2.png" alt="Group Photo 2">
+      <img src="cinematic/Group Photo 2.png" alt="Group Photo 2">
       <div class="caption">
         <p>Group Photo 2.png</p>
         <details>
@@ -417,7 +366,7 @@
 
     <!-- Gallery Item: Group Photo.png -->
     <div class="gallery-item">
-      <img src="/cinematic/Group Photo.png" alt="Group Photo">
+      <img src="cinematic/Group Photo.png" alt="Group Photo">
       <div class="caption">
         <p>Group Photo.png</p>
         <details>
@@ -429,7 +378,7 @@
 
     <!-- Gallery Item: Hi Open with First Name.png -->
     <div class="gallery-item">
-      <img src="/cinematic/Hi Open with First Name.png" alt="Hi Open with First Name">
+      <img src="cinematic/Hi Open with First Name.png" alt="Hi Open with First Name">
       <div class="caption">
         <p>Hi Open with First Name.png</p>
         <details>
@@ -441,7 +390,7 @@
 
     <!-- Gallery Item: Lead Magnetron Double Exposed.png -->
     <div class="gallery-item">
-      <img src="/cinematic/Lead Magnetron Double Exposed.png" alt="Lead Magnetron Double Exposed">
+      <img src="cinematic/Lead Magnetron Double Exposed.png" alt="Lead Magnetron Double Exposed">
       <div class="caption">
         <p>Lead Magnetron Double Exposed.png</p>
         <details>
@@ -453,7 +402,7 @@
 
     <!-- Gallery Item: Lead dbl.png -->
     <div class="gallery-item">
-      <img src="/cinematic/Lead dbl.png" alt="Lead dbl">
+      <img src="cinematic/Lead dbl.png" alt="Lead dbl">
       <div class="caption">
         <p>Lead dbl.png</p>
         <details>
@@ -465,7 +414,7 @@
 
     <!-- Gallery Item: Major Cringes Personal Post.png -->
     <div class="gallery-item">
-      <img src="/cinematic/Major Cringes Personal Post.png" alt="Major Cringes Personal Post">
+      <img src="cinematic/Major Cringes Personal Post.png" alt="Major Cringes Personal Post">
       <div class="caption">
         <p>Major Cringes Personal Post.png</p>
         <details>
@@ -477,7 +426,7 @@
 
     <!-- Gallery Item: Metrics Dbl.png -->
     <div class="gallery-item">
-      <img src="/cinematic/Metrics Dbl.png" alt="Metrics Dbl">
+      <img src="cinematic/Metrics Dbl.png" alt="Metrics Dbl">
       <div class="caption">
         <p>Metrics Dbl.png</p>
         <details>
@@ -489,7 +438,7 @@
 
     <!-- Gallery Item: Movie Poster.png -->
     <div class="gallery-item">
-      <img src="/cinematic/Movie Poster.png" alt="Movie Poster">
+      <img src="cinematic/Movie Poster.png" alt="Movie Poster">
       <div class="caption">
         <p>Movie Poster.png</p>
         <details>
@@ -501,7 +450,7 @@
 
     <!-- Gallery Item: Oversharing Offensive.PNG -->
     <div class="gallery-item">
-      <img src="/cinematic/Oversharing Offensive.PNG" alt="Oversharing Offensive">
+      <img src="cinematic/Oversharing Offensive.PNG" alt="Oversharing Offensive">
       <div class="caption">
         <p>Oversharing Offensive.PNG</p>
         <details>
@@ -513,7 +462,7 @@
 
     <!-- Gallery Item: PC Terminal.png -->
     <div class="gallery-item">
-      <img src="/cinematic/PC Terminal.png" alt="PC Terminal">
+      <img src="cinematic/PC Terminal.png" alt="PC Terminal">
       <div class="caption">
         <p>PC Terminal.png</p>
         <details>
@@ -525,7 +474,7 @@
 
     <!-- Gallery Item: Private DM Slide Darkly.png -->
     <div class="gallery-item">
-      <img src="/cinematic/Private DM Slide Darkly.png" alt="Private DM Slide Darkly">
+      <img src="cinematic/Private DM Slide Darkly.png" alt="Private DM Slide Darkly">
       <div class="caption">
         <p>Private DM Slide Darkly.png</p>
         <details>
@@ -537,7 +486,7 @@
 
     <!-- Gallery Item: Social Style.png -->
     <div class="gallery-item">
-      <img src="/cinematic/Social Style.png" alt="Social Style">
+      <img src="cinematic/Social Style.png" alt="Social Style">
       <div class="caption">
         <p>Social Style.png</p>
         <details>
@@ -549,7 +498,7 @@
 
     <!-- Gallery Item: The Calendy DM Slide.png -->
     <div class="gallery-item">
-      <img src="/cinematic/The Calendy DM Slide.png" alt="The Calendy DM Slide">
+      <img src="cinematic/The Calendy DM Slide.png" alt="The Calendy DM Slide">
       <div class="caption">
         <p>The Calendy DM Slide.png</p>
         <details>
@@ -561,7 +510,7 @@
 
     <!-- Gallery Item: Unsubscribe dbl.png -->
     <div class="gallery-item">
-      <img src="/cinematic/Unsubscribe dbl.png" alt="Unsubscribe dbl">
+      <img src="cinematic/Unsubscribe dbl.png" alt="Unsubscribe dbl">
       <div class="caption">
         <p>Unsubscribe dbl.png</p>
         <details>
@@ -573,7 +522,7 @@
 
     <!-- Gallery Item: What happened next.png -->
     <div class="gallery-item">
-      <img src="/cinematic/What happened next.png" alt="What happened next">
+      <img src="cinematic/What happened next.png" alt="What happened next">
       <div class="caption">
         <p>What happened next.png</p>
         <details>
@@ -582,11 +531,7 @@
         </details>
       </div>
     </div>
-
   </div>
-  <!-- 
-    Improvement: A footer could provide context, credits, 
-    or further links to the overall satirical content or your main site.
-  -->
+  <!-- Improvement: Consider adding a footer with project credits, navigation links, or further reading -->
 </body>
 </html>
