@@ -6,7 +6,10 @@
   <title>G.I. ERROR - Cinematic Visual Showcase</title>
   <!-- Improvement: Consider adding meta description and keywords for SEO enhancement -->
   <style>
-    /* Global Styles */
+    /* 
+      GLOBAL STYLES 
+      Dark background for cinematic atmosphere; use a sans-serif font for readability.
+    */
     body {
       margin: 0;
       padding: 0;
@@ -15,18 +18,45 @@
       font-family: Arial, sans-serif;
       line-height: 1.6;
     }
-    /* Improvement: Test with different sans-serif fonts for better readability */
+    /*
+      Improvement: Potentially increase the base font-size for better readability,
+      especially on high-density mobile screens.
+    */
 
-    /* Gallery Container using CSS Grid for responsive layout */
+    /* 
+      GALLERY WRAPPER 
+      We use explicit columns for small, medium, and large screens to ensure a stable layout. 
+    */
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
       padding: 20px;
+      /* Single column on extra-small screens */
+      grid-template-columns: 1fr;
     }
-    /* Improvement: Consider adding ARIA roles (e.g., role="list") for accessibility */
+    
+    /* 
+      Responsive Breakpoints:
+      - On medium screens (≥ 600px), show 2 columns.
+      - On large screens (≥ 1024px), show 4 columns.
+      These breakpoints can be adjusted to suit your project's design.
+    */
+    @media (min-width: 600px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 1024px) {
+      .gallery {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
 
-    /* Gallery Item */
+    /* 
+      GALLERY ITEM 
+      Each item is a simple box with a shadow and background. 
+      By default, let the image define the height.
+    */
     .gallery-item {
       background-color: #1a1a1a;
       border-radius: 5px;
@@ -34,12 +64,23 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.6);
       display: flex;
       flex-direction: column;
+      /* 
+        Improvement: If you want uniform card heights, consider a fixed height plus object-fit for images. 
+        e.g. min-height: 400px 
+      */
     }
-    /* Improvement: Add lazy loading (loading="lazy") to images to improve performance */
+    /* 
+      Use lazy loading (loading="lazy") for performance if desired 
+      (not all browsers fully support it yet, but it's worth adding).
+    */
 
-    /* Image Styling and Interactive Effects */
+    /* 
+      IMAGE STYLING & INTERACTIVITY 
+      Grayscale-to-color hover transition and mild zoom for cinematic flair.
+    */
     .gallery-item img {
       width: 100%;
+      height: auto;
       display: block;
       filter: grayscale(100%);
       transition: filter 0.3s ease, transform 0.3s ease;
@@ -48,9 +89,16 @@
       filter: grayscale(0%);
       transform: scale(1.05);
     }
-    /* Improvement: Experiment with border effects or subtle overlays on hover for added polish */
+    /* 
+      Improvement: If you want a uniform aspect ratio:
+      1) Wrap img in a container with fixed aspect-ratio (16:9 or 4:3).
+      2) Use object-fit: cover or contain as needed.
+    */
 
-    /* Caption and Details Styling */
+    /* 
+      CAPTION AND DETAILS 
+      Place the filename as a heading or paragraph, then details for expansions.
+    */
     .caption {
       padding: 10px;
       background-color: #222;
@@ -80,18 +128,20 @@
       font-size: 0.8em;
       color: #ccc;
     }
-    /* Improvement: Consider using focus-visible styling for keyboard navigation on details/summary */
+    /* 
+      Improvement: Consider focus-visible styling for keyboard navigation on <summary>.
+    */
   </style>
 </head>
 <body>
-  <!-- Main Gallery Container -->
+  <!-- 
+    Improvement: A header could introduce the project and its satirical/UX critique theme.
+  -->
   <div class="gallery">
-    <!-- Improvement: Could add a header element to introduce the cinematic project and its satirical tone -->
 
     <!-- Gallery Item: Action Sequence.png -->
     <div class="gallery-item">
       <img src="/cinematic/Action Sequence.png" alt="Action Sequence">
-      <!-- Improvement: Include descriptive alt text if available for improved accessibility -->
       <div class="caption">
         <p>Action Sequence.png</p>
         <details>
@@ -532,7 +582,11 @@
         </details>
       </div>
     </div>
+
   </div>
-  <!-- Improvement: Consider a footer with project credits and links to additional satirical content or back-links -->
+  <!-- 
+    Improvement: A footer could provide context, credits, 
+    or further links to the overall satirical content or your main site.
+  -->
 </body>
 </html>
