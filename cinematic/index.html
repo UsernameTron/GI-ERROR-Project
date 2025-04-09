@@ -4,8 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>G.I. ERROR - Cinematic Visual Showcase</title>
-  <!-- SEO & Accessibility Improvements: Consider adding a meta description,
-       ARIA landmarks (e.g. <header>, <main>, <footer>), and additional keywords -->
+  <!-- SEO & Accessibility: Add meta descriptions, keywords, and ARIA landmarks as needed -->
   <style>
     /* GLOBAL STYLES: Dark, cinematic aesthetic */
     body {
@@ -16,19 +15,18 @@
       font-family: Arial, sans-serif;
       line-height: 1.6;
     }
-
-    /* GALLERY CONTAINER: Using CSS Grid for responsive layout; 
-       assumes index.html is in the same folder as the image assets */
+    
+    /* GALLERY CONTAINER: Responsive grid layout */
     .gallery {
       display: grid;
       gap: 20px;
       padding: 20px;
-      max-width: 1200px; /* Limits overall width on large screens */
-      margin: 0 auto;    /* Centers the gallery container */
+      max-width: 1200px; /* Limit width on large screens */
+      margin: 0 auto;    /* Center the container */
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
-
-    /* GALLERY ITEM: Card styling for each visual */
+    
+    /* GALLERY ITEM: Card style for each image block */
     .gallery-item {
       background-color: #1a1a1a;
       border-radius: 5px;
@@ -37,8 +35,8 @@
       display: flex;
       flex-direction: column;
     }
-
-    /* IMAGE STYLES: Full-width images with a grayscale-to-color hover effect */
+    
+    /* IMAGE STYLES: Full-width images with grayscale-to-color hover effect */
     .gallery-item img {
       width: 100%;
       display: block;
@@ -49,8 +47,8 @@
       filter: grayscale(0%);
       transform: scale(1.05);
     }
-
-    /* CAPTION & DETAILS: Text styling for captions and collapsible description */
+    
+    /* CAPTION & DETAILS: Styling for captions and collapsible description */
     .caption {
       padding: 10px;
       background-color: #222;
@@ -530,6 +528,6 @@
       </div>
     </div>
   </div>
-  <!-- FOOTER: Add any additional footer content or credits if needed -->
+  <!-- FOOTER: Add additional footer content if needed -->
 </body>
 </html>
