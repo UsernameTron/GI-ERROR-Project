@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>G.I. ERROR - Cinematic Visual Showcase</title>
-  <!-- Improvement: Add meta description, keywords, and ARIA landmarks for better SEO and accessibility -->
+  <!-- SEO: You can add a meta description and keywords here -->
+  <!-- Accessibility: Consider adding ARIA landmarks (e.g., <header>, <main>, <footer>) -->
   <style>
-    /* Global Styles: Establish the dark, cinematic aesthetic */
+    /* GLOBAL STYLES: Dark, cinematic feel */
     body {
       margin: 0;
       padding: 0;
@@ -15,20 +16,16 @@
       font-family: Arial, sans-serif;
       line-height: 1.6;
     }
-    /* Improvement: Consider using a larger base font-size for high-density mobile screens */
-
-    /* Gallery Container: Centered with a maximum width for desktop and dynamic grid columns */
+    /* GALLERY CONTAINER: Responsive grid centered on the page */
     .gallery {
       display: grid;
       gap: 20px;
       padding: 20px;
-      max-width: 1200px;       /* Restricts gallery width on large screens */
-      margin: 0 auto;          /* Centers the gallery container */
+      max-width: 1200px; /* Limits the gallery width on large screens */
+      margin: 0 auto;    /* Centers the container */
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
-    /* Improvement: Adjust minmax values if you wish to change card sizing */
-
-    /* Gallery Item: Flex container to stack image and caption consistently */
+    /* GALLERY ITEM: Card styling for each image block */
     .gallery-item {
       background-color: #1a1a1a;
       border-radius: 5px;
@@ -37,9 +34,7 @@
       display: flex;
       flex-direction: column;
     }
-    /* Improvement: Use a fixed or aspect-ratio container to unify image heights if needed */
-
-    /* Image Styles: Full width with a grayscale-to-color hover effect and subtle zoom */
+    /* IMAGE STYLES: Full-width image with grayscale-to-color hover effect */
     .gallery-item img {
       width: 100%;
       display: block;
@@ -50,9 +45,7 @@
       filter: grayscale(0%);
       transform: scale(1.05);
     }
-    /* Improvement: Consider object-fit: cover within a fixed-height container to maintain aspect ratios */
-
-    /* Caption and Details: Clear text and collapsible details with appropriate spacing */
+    /* CAPTION & DETAILS: Caption styling with collapsible details */
     .caption {
       padding: 10px;
       background-color: #222;
@@ -73,7 +66,6 @@
       padding: 5px;
       font-size: 0.85em;
       outline: none;
-      /* Improvement: Add focus-visible styling for improved keyboard navigation */
     }
     details[open] summary {
       border-bottom: 1px solid #555;
@@ -86,7 +78,7 @@
   </style>
 </head>
 <body>
-  <!-- Main gallery container -->
+  <!-- MAIN GALLERY CONTAINER -->
   <div class="gallery">
     <!-- Gallery Item: Action Sequence.png -->
     <div class="gallery-item">
@@ -532,6 +524,6 @@
       </div>
     </div>
   </div>
-  <!-- Improvement: Consider adding a footer with project credits, navigation links, or further reading -->
+  <!-- FOOTER: Add footer content here if desired (e.g., project credits, navigation links) -->
 </body>
 </html>
